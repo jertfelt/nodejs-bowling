@@ -1,0 +1,59 @@
+<html lang="sv">
+<%- include("../partials/head.ejs") %> 
+
+<body>
+  <%- include ("../partials/nav.ejs") %>
+
+  <div 
+  class="maincontent create-member">
+  <h3>Välkommen!</h3>
+  <p>Fyll i nedan fält för att bli medlem i vår bowlingförening:</p>
+    <form action="/medlemmar" 
+    method="POST">
+
+      <label for="name">
+        Namn:</label>
+      <input type="text" 
+      id="name" 
+      name="name" 
+      required>
+
+      <label for="email">
+        Email:</label>
+      <input type="email" 
+      id="email" 
+      name="email" 
+      required>
+
+      <label for="phone">
+        Telefon:</label>
+      <input type="text" 
+      id="phone" 
+      name="phone" 
+      required>
+
+      <label for="slogan">
+        Din slogan:</label>
+      <input type="text"
+      id="slogan" 
+      name="slogan" 
+      required>
+
+      <label for="startdate">
+        Dagens datum:</label>
+      <input type="date" 
+      id="startdate" 
+      required
+      name="startdate"
+      value="2021-07-22"
+      min="2021-07-22" 
+      max="2050-03-04">
+
+      <button>Bli medlem</button>
+      
+    </form>
+  </div>
+  
+  <%- include("../partials/footer.ejs") %>
+</body>
+</html>

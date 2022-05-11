@@ -1,0 +1,17 @@
+Jag har utgått från lektionsanteckningar, samt fyllt ut några frågetecken tack vare Net Ninja (github.com/iamshaunjp) Jag har tex jobbat med schema (mongoose).
+
+Projektet har därför MVC (Model, View, Controller) filsystem, samt lite annat.
+
+Installerade verktyp etc:
+
+MongoDB
+Express
+EJS view engine
+
+Mongoose 
+//mongoose är rekommenderat för att skriva enklare kod samt göra enkla scheman för databasen, tycker den var fantastisk https://mongoosejs.com/docs/guide.html
+
+Mongoshell (fast använder typ inte pga massa vulnerabilities)
+
+Noteringar:
+Har tagit bort type: module från package.json pga import gav mig error om default, som jag inte kunde lösa. Jag använder därför hellre require

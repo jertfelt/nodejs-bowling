@@ -1,0 +1,31 @@
+<html lang="sv">
+<%- include("../partials/head.ejs") %> 
+
+<body>
+  <%- include ("../partials/nav.ejs") %>
+
+  <div class="maincontent__medlem">
+    <h2>Våra medlemmar</h2>
+    <div class="medlem__grid">
+    <% if (members.length > 0) { %>
+    <%members.forEach(member => { %>
+      <div class="medlem__grid--kort">
+      <a class="medlem--link" 
+      href="./medlemmar/<%= member._id %>">
+    <h3 class="medlem namn"> <%= member.name %></h3>
+    <p class="medlem slogan">Slogan: <%= member.slogan %></p>
+    <span>
+
+  </span>
+    </a>
+  </div>
+   <% }) %>
+  </div>
+   <% } else { %>
+    <p>Vi har inga medlemmar :( </p>
+    <% } %>
+  </div>
+  
+  <%- include("../partials/footer.ejs") %>
+</body>
+</html>
