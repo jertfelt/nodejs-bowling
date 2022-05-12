@@ -4,10 +4,10 @@
 <body>
   <%- include ("../partials/nav.ejs") %>
 
-  <div class="maincontent__update"
+  <div class="maincontent__update">
   <h2> Uppdatera medlemsuppgifter för <%= member.name%></h2>
   <form 
-  action ="/medlemmar/<%= member.id%>/uppdatera"
+  action ="/medlemmar/uppdatera/<%= member.id%>"
   method="POST">
   <label for="name">Namn:</label>
   <input type="text" 
@@ -35,6 +35,7 @@
   </div>
   <button> Ändra </button>
 </form>
+</div>
   
   <%- include("../partials/footer.ejs") %>
 </body>

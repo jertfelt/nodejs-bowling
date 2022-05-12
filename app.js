@@ -84,7 +84,6 @@ expressApp.post("/medlemmar", (request, response) => {
   // console.log(request.body) tack vare url.encoded lägnre upp
   //nytt objekt utifrån request.body
   const medlem = new Members(request.body);
-  console.log(medlem)
   medlem.save().then(()=> {
     response.redirect("/medlemmar");
   })
@@ -116,16 +115,30 @@ expressApp.get("/medlemmar/:id/uppdatera", (request, response) => {
 })
 
 //uppdatera medlemsuppgifter (POST)
-expressApp.get("/medlemmar/:id/uppdatera", (request, response) => {
-  console.log(request.params)
-  // const id = request.params.id;
-  // const newValues = {$set: {...request.body}};
-  // Members.findByIdAndUpdate(id, newValues).then(result => {
-  //   response.render("./members/onemember", {
-  //     member: result, title: "Medlemsinfo"})
-  //   })
-  //   console.log("ändrat")
+expressApp.post("/medlemmar/uppdatera/:id", (request, response) => {
+  const id = request.params.id;
+  console.log(request.body) //!det här blir ett objekt
+  const memberdetail = request.body; 
+  
+  Members.findByIdAndUpdate(id, { 
+  "name":  memberdetail.name, 
+  "email":memberdetail.email,
+  "phone": memberdetail.phone,
+  "slogan": memberdetail.slogan})
+  .then(result => {
+    response.render("./members/onemember", {
+      member: result, title: "Medlemsinfo"
+    })
+  }).catch(error => {
+    console.log(error)
   })
+
+  // console.log(memberdetail.name)
+  // console.log(memberdetail.email)
+  // console.log(memberdetail.phone)
+  // console.log(memberdetail.slogan)
+  })
+  
 
 
 //delete medlem 
