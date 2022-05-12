@@ -4,32 +4,27 @@
 <body>
   <%- include ("../partials/nav.ejs") %>
 
-  <div class="maincontent__medlem">
+<main class="maincontent__medlem">
+  <%- include("../partials/sortmembers.ejs") %> 
     <h2>Våra medlemmar</h2>
-    <a href="/medlemmar/a-z">Sortera A-Ö</a>
-    <a href="/medlemmar/z-a">Sortera Ö-A</a>
-    <a href="/medlemmar/nyast">Sortera nyast till äldst</a>
-    <a href="/medlemmar">Sortera äldst till nyast</a>
+ 
     <div class="medlem__grid">
     <% if (members.length > 0) { %>
     <%members.forEach(member => { %>
       <div class="medlem__grid--kort">
-      <a class="medlem--link" 
-      href="./medlemmar/<%= member._id %>">
-    <h3 class="medlem namn"> <%= member.name %></h3>
-    <p class="medlem slogan">Slogan: <br>"<%= member.slogan %>"</p>
-    <span>
-
-  </span>
-    </a>
-  </div>
-   <% }) %>
-  </div>
-   <% } else { %>
+        <a class="medlem--link" 
+        href="./medlemmar/<%= member._id %>">
+          <h3 class="medlem namn"> <%= member.name %></h3>
+          <p class="medlem slogan">Slogan: <br>"<%= member.slogan %>"</p>
+        </a>
+      </div>
+    <% }) %>
+    </div>
+    <% } else { %>
     <p>Vi har inga medlemmar :( </p>
     <% } %>
-  </div>
   
-  <%- include("../partials/footer.ejs") %>
+</main>
+<%- include("../partials/footer.ejs") %>
 </body>
 </html>

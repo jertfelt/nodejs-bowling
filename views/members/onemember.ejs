@@ -3,14 +3,14 @@
 
 <body>
   <%- include ("../partials/nav.ejs") %>
-
   <div class="maincontent members__single">
     
 
     <div class="content">
+      
       <h2><%= member.name %></h2>
-      <p class="medlem startdate">Medlem sedan: <%= member.startdate %></p>
-      <p class="medlem slogan">Slogan: <%= member.slogan %></p>
+      <p class="medlem slogan">Slogan: "<%= member.slogan %>"</p>
+      <p class="medlem startdate textsmall">Född: <%= member.birthday %></p>
       <span>
       <h3 class="medlem kontakt">Kontaktuppgifter</h3>
       <p class="medlem email">Email: <%= member.email %></p>

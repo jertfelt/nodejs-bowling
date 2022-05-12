@@ -36,7 +36,7 @@ expressApp.get("/", (request, response) => {
 
 //----medlemmar:
 expressApp.get("/medlemmar", (request, response) => {
-    //alla medlemmar från äldst till nyast (default)
+    //alla medlemmar som reggades först till nyast (default)
   Members.find()
   .then(result => {
     response.render('./members/members', { members: result, title: "Våra medlemmar" });
@@ -117,29 +117,22 @@ expressApp.get("/medlemmar/:id/uppdatera", (request, response) => {
 //uppdatera medlemsuppgifter (POST)
 expressApp.post("/medlemmar/uppdatera/:id", (request, response) => {
   const id = request.params.id;
-  console.log(request.body) //!det här blir ett objekt
+  // console.log(request.body) //!det här blir ett objekt
   const memberdetail = request.body; 
-  
   Members.findByIdAndUpdate(id, { 
   "name":  memberdetail.name, 
   "email":memberdetail.email,
   "phone": memberdetail.phone,
   "slogan": memberdetail.slogan})
   .then(result => {
-    response.render("./members/onemember", {
+    response.render("./members", {
       member: result, title: "Medlemsinfo"
     })
   }).catch(error => {
     console.log(error)
   })
-
-  // console.log(memberdetail.name)
-  // console.log(memberdetail.email)
-  // console.log(memberdetail.phone)
-  // console.log(memberdetail.slogan)
   })
   
-
 
 //delete medlem 
 expressApp.delete("/medlemmar/:id", (request, response) => {

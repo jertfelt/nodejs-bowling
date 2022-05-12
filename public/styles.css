@@ -48,9 +48,62 @@ nav{
   padding:3rem;
 }
 .maincontent__medlem{
-  min-height:100vh;
+  background-image: url("hultsfred.jpg");
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  background-color: royalblue;
+  display:flex;
+  flex-direction: column;
   padding:3rem;
+  padding-bottom:0rem;
+  min-height:80vh;
+  padding:3rem;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+.maincontent__medlem h2{
+  filter: drop-shadow(16px 16px 10px black);
+  color:white;
+  font-size: 52px;
+  font-family: "Arvo";
+}
+
+.maincontent__update{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height:100vh;
+  padding:6rem;
+  background: palevioletred;
+  background: linear-gradient(230deg, blue 2%, palevioletred 100%);
+}
+.maincontent__update form{
+  display:flex;
+  flex-direction: column;
+  width:40%;
+}
+.maincontent__update form input{
+  width:60%;
+  border:none;
+  padding:0.4rem;
+  margin-bottom:1rem;
+  margin-top:0.2rem;
+}
+.maincontent__update form button{
+  filter: drop-shadow(2px 2px 2px black);
+background-color: black;
+border:none;
+padding:0.4rem;
+width:20%;
+border-radius: 19px;
+color:white;
+font-weight: bold;
+text-transform: uppercase;
+}
+
 .homepage h2{
 font-size:40px;
 }
@@ -74,19 +127,6 @@ font-size:40px;
   width:100%;
   color:white;
 }
-.maincontent__medlem{
-  background-image: url("Bild-033-745x273.jpg");
-  background-repeat: no-repeat; 
-  background-size: cover; 
-  background-color: royalblue;
-  display:flex;
-  flex-direction: column;
-  padding:3rem;
-  padding-bottom:0rem;
-}
-.maincontent__medlem h2{
-  text-align: center;
-}
 
 .medlem__grid{
   padding:1rem;
@@ -94,6 +134,7 @@ font-size:40px;
   grid-template-columns: 1fr 1fr 1fr;
 }
 .medlem__grid--kort{
+  filter: drop-shadow(2px 2px 2px black);
   padding:1rem;
   background-color: palevioletred;
   margin:2rem;
@@ -102,36 +143,32 @@ font-size:40px;
 }
 .medlem__grid--kort h3{
   color:blue;
-  font-size:32px;
-  line-height: 0;
+  font-size:24px;
+  
 }
 .medlem__grid--kort p{
   font-weight: bold;
 }
 
-.members__single .halligan{
-  margin-top:3rem;
-  background-color: black;
-}
-.members__single .halligan p{
-  line-height:2rem;
-}
-
-
 .members__single{
+  background-image: url("electric.jpg");
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  background-color: black;
   display:flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   text-align: left;
 }
 .members__single h2{
   font-family: "Arvo";
-  color:palevioletred;
-  font-size:48px;
+  color:white;
+  font-size:40px;
 }
 .members__single div{
   font-size:20px;
-padding: 2rem;
+padding: 5rem;
 border-radius: 19px;
 background-color: blue;
 text-align: left;
@@ -139,6 +176,8 @@ display:flex;
 flex-direction: column;
 line-height:0rem;
 margin-bottom:2rem;
+filter: drop-shadow(2px 2px 2px black);
+
 }
 .members__single div span{
   line-height:1rem;
@@ -149,14 +188,34 @@ margin-bottom:2rem;
     margin-top:1rem;
     margin-bottom:1rem;
     }
-  .members__single div a{
+  .members__single div a:first-of-type{
+      margin-top:1rem;
+      background: black;
+      filter: drop-shadow(2px 2px 2px black);
+      text-align: center;
+      color:palevioletred;
+      margin-bottom:1rem;
+      width:30%;
+      padding:1.5rem;
+      border-radius: 19px;
+      font-weight: bold;}
+      .members__single div a:first-of-type:hover{
+        color:black;
+        background-color: palevioletred;}
+
+  .members__single div a:last-of-type{
   margin-top:1rem;
   background: black;
   text-align: center;
   color:palevioletred;
-  padding:1rem;
+  padding:1.5rem;
   border-radius: 19px;
   font-weight: bold;
+  filter: drop-shadow(2px 2px 2px black);
+}
+.members__single div a:last-of-type:hover{
+color:black;
+background-color: palevioletred;
 }
 .members__single div a :hover{
   color:whitesmoke;
@@ -202,6 +261,7 @@ footer h3{
   border:none;
   font-weight:bold;
   font-size:18px;
+  filter: drop-shadow(2px 2px 2px black);
 }
 
 .create-member form label{
@@ -229,7 +289,29 @@ footer h3{
 }
 
 .sorting{
+  align-self: flex-end;
+  background-color: black;
+  width:20%;
+  padding:1rem;
   padding-left:3rem;
   display:flex;
   flex-direction: column;
+  border-radius: 19px;
+}
+.sorting a {
+  color:white;
+  font-weight: 600;
+}
+.sorting a:hover{
+  color:blue;
+}
+
+.integrity{
+  padding:2rem;
+  width:80%;
+}
+
+.delete:hover{
+
+  cursor: pointer;
 }

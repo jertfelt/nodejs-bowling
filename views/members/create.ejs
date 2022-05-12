@@ -39,20 +39,21 @@
       name="slogan" 
       required>
 
-      <label for="startdate">
-        Dagens datum:</label>
+      <label for="birthday">
+      Födelsedatum:</label>
       <input type="date" 
-      id="startdate" 
+      id="birthday" 
       required
-      name="startdate"
-      value="2021-07-22"
-      min="2021-07-22" 
-      max="2050-03-04">
+      name="birthday"
+      value="1951-01-01"
+      min="1951-01-01" 
+      max="2012-12-31">
 
       <button>Bli medlem</button>
       
     </form>
     <p>Att bli medlem kostar 500 SEK/år och då kan du vara med och spela matcher.</p>
+    <%- include("../partials/integrity.ejs") %> 
   </div>
   
   <%- include("../partials/footer.ejs") %>

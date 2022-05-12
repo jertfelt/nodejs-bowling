@@ -18,7 +18,7 @@ const memberSchema = new Schema({
     type: String,
     required: true
   },
-  startdate: {
+  birthday: {
     type: String,
     required: true
   }
