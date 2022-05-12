@@ -56,7 +56,6 @@ expressApp.get("/medlemmar/a-z", (request, response) => {
   });
 })
 
-
 //sortera alla medlemmar ö-a
 expressApp.get("/medlemmar/z-a", (request, response) => {
   Members.find().sort({ name: -1}).then(result => {
@@ -94,7 +93,6 @@ expressApp.post("/medlemmar", (request, response) => {
   })
 })
 
-
 expressApp.get("/medlemmar/:id", (request, response) => {
   const id = request.params.id;
   // console.log(id)
@@ -107,11 +105,33 @@ expressApp.get("/medlemmar/:id", (request, response) => {
   })
 })
 
-//delete medlem
+//uppdatera medlemsuppgifter (GET)
+expressApp.get("/medlemmar/:id/uppdatera", (request, response) => {
+  const id = request.params.id;
+  Members.findById(id).then(result => { 
+    response.render("./members/update", {
+      member: result, title: "Uppdatera"
+    })
+  })
+})
+
+//uppdatera medlemsuppgifter (POST)
+expressApp.get("/medlemmar/:id/uppdatera", (request, response) => {
+  console.log(request.params)
+  // const id = request.params.id;
+  // const newValues = {$set: {...request.body}};
+  // Members.findByIdAndUpdate(id, newValues).then(result => {
+  //   response.render("./members/onemember", {
+  //     member: result, title: "Medlemsinfo"})
+  //   })
+  //   console.log("ändrat")
+  })
+
+
+//delete medlem 
 expressApp.delete("/medlemmar/:id", (request, response) => {
   const id = request.params.id;
   Members.findByIdAndDelete(id).then(result => {
-    
     response.json({ redirect: "/medlemmar"})
     console.log("deleted")
   }).catch(error => {

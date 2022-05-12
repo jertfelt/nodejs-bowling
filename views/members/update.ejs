@@ -1,0 +1,41 @@
+<html lang="sv">
+<%- include("../partials/head.ejs") %> 
+
+<body>
+  <%- include ("../partials/nav.ejs") %>
+
+  <div class="maincontent__update"
+  <h2> Uppdatera medlemsuppgifter för <%= member.name%></h2>
+  <form 
+  action ="/medlemmar/<%= member.id%>/uppdatera"
+  method="POST">
+  <label for="name">Namn:</label>
+  <input type="text" 
+  name="name" 
+  id="name"
+  value="<%= member.name%>">
+
+  <label for="email">Email:</label>
+  <input type="email" 
+  name="email" 
+  id="email" 
+  value="<%= member.email%>">
+
+  <label for="phone">Telefonnummer:</label>
+  <input type="tel" 
+  name="phone" 
+  id="phone" 
+  value="<%= member.phone%>">
+  
+  <label for="slogan">Slogan:</label>
+  <input type="text" 
+  name="slogan" 
+  id="slogan"
+  value="<%= member.slogan%>">
+  </div>
+  <button> Ändra </button>
+</form>
+  
+  <%- include("../partials/footer.ejs") %>
+</body>
+</html>
