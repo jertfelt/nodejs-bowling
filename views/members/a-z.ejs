@@ -6,6 +6,10 @@
 
   <div class="maincontent__medlem">
     <h2>Våra medlemmar</h2>
+    <a href="/medlemmar/a-z">Sortera A-Ö</a>
+    <a href="/medlemmar/z-a">Sortera Ö-A</a>
+    <a href="/medlemmar/nyast">Sortera nyast till äldst</a>
+    <a href="/medlemmar">Sortera äldst till nyast</a>
     <div class="medlem__grid">
     <% if (members.length > 0) { %>
     <%members.forEach(member => { %>
@@ -14,17 +18,14 @@
       href="./medlemmar/<%= member._id %>">
     <h3 class="medlem namn"> <%= member.name %></h3>
     <p class="medlem slogan">Slogan: <br>"<%= member.slogan %>"</p>
+    <span>
+
+  </span>
     </a>
   </div>
-    <% }) %>
+   <% }) %>
   </div>
-  <div class="sorting">
-  <a href="/medlemmar/a-z">Sortera A-Ö</a>
-  <a href="/medlemmar/z-a">Sortera Ö-A</a>
-  <a href="/medlemmar/nyast">Sortera nyast till äldst</a>
-  <a href="/medlemmar">Sortera äldst till nyast</a>
-  </div>
-    <% } else { %>
+   <% } else { %>
     <p>Vi har inga medlemmar :( </p>
     <% } %>
   </div>

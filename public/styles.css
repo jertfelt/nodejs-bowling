@@ -224,7 +224,12 @@ footer h3{
 }
 
 .nodots{
+  text-align: center;
+  line-height:1.7rem;
+}
 
- text-align: center;
- line-height:1.7rem;
+.sorting{
+  padding-left:3rem;
+  display:flex;
+  flex-direction: column;
 }

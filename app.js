@@ -36,11 +36,42 @@ expressApp.get("/", (request, response) => {
 
 //----medlemmar:
 expressApp.get("/medlemmar", (request, response) => {
-  // response.render("./members/members", {title: "Våra medlemmar"})
-  Members.find().sort({ createdAt: -1 }) //från nyast till äldst
+    //alla medlemmar från äldst till nyast (default)
+  Members.find()
   .then(result => {
     response.render('./members/members', { members: result, title: "Våra medlemmar" });
   })
+  .catch(error => {
+    console.log(error);
+  });
+})
+
+//sortera alla medlemmar a-ö
+expressApp.get("/medlemmar/a-z", (request, response) => {
+  Members.find().sort({ name: 1}).then(result => {
+    response.render("./members/a-z", { members: result, title: "Våra medlemmar A-Ö"});
+  }) 
+  .catch(error => {
+    console.log(error);
+  });
+})
+
+
+//sortera alla medlemmar ö-a
+expressApp.get("/medlemmar/z-a", (request, response) => {
+  Members.find().sort({ name: -1}).then(result => {
+    response.render("./members/a-z", { members: result, title: "Våra medlemmar A-Ö"});
+  }) 
+  .catch(error => {
+    console.log(error);
+  });
+})
+
+//sortera alla medlemmar nyast till äldst (utifrån timestamp som kära mongoose hjälper mig fixa)
+expressApp.get("/medlemmar/nyast", (request, response) => {
+  Members.find().sort({ createdAt: -1}).then(result => {
+    response.render("./members/newest", { members: result, title: "Våra medlemmar från nyast till äldst"});
+  }) 
   .catch(error => {
     console.log(error);
   });
@@ -62,6 +93,7 @@ expressApp.post("/medlemmar", (request, response) => {
     console.log(error)
   })
 })
+
 
 expressApp.get("/medlemmar/:id", (request, response) => {
   const id = request.params.id;
@@ -86,8 +118,6 @@ expressApp.delete("/medlemmar/:id", (request, response) => {
     console.log(error)
   })
 })
-
-
 
 //!404 
 expressApp.use((request, response) => {
