@@ -1,3 +1,6 @@
+
+![Bowling hall](/../public/node-bowling.png?raw=true "Optional Title")
+
 Jag har utgått från lektionsanteckningar, samt fyllt ut några frågetecken tack vare Net Ninja (github.com/iamshaunjp) Jag har tex jobbat med schema (mongoose).
 
 Jag har testat att göra enligt en MVC-mappstruktur (models, views, controller) men det lirade inte riktigt utan blev läsfel. På grund av tidsbrist så lät jag därför bli att utforska den saken närmre.
