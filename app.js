@@ -2,10 +2,8 @@ const express = require("express");
 const { append } = require("express/lib/response");
 //funktion av express: 
 const expressApp = express();
+//members- schema:
 const Members = require('./models/members');
-
-//MVC is da MVP
-// const memberRoutes = require("./routes/memberRoutes");
 
 
 //*------------mongoDB databas, connecta och lyssna på 3000-localservern för requests
@@ -65,10 +63,6 @@ expressApp.post("/medlemmar", (request, response) => {
   })
 })
 
-// expressApp.get("/medlemmar/medlem", (request, response) => {
-//   response.render("./members/member", {title: "Detaljer"})
-// })
-
 expressApp.get("/medlemmar/:id", (request, response) => {
   const id = request.params.id;
   // console.log(id)
@@ -93,8 +87,7 @@ expressApp.delete("/medlemmar/:id", (request, response) => {
   })
 })
 
-//medlemmar routes 
-// expressApp.use("/members", memberRoutes);
+
 
 //!404 
 expressApp.use((request, response) => {

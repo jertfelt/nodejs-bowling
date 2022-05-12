@@ -47,6 +47,10 @@ nav{
   min-height:100vh;
   padding:3rem;
 }
+.maincontent__medlem{
+  min-height:100vh;
+  padding:3rem;
+}
 .homepage h2{
 font-size:40px;
 }
@@ -94,7 +98,7 @@ font-size:40px;
   background-color: palevioletred;
   margin:2rem;
   text-align: center;
-  border-radius: 19px;
+  
 }
 .medlem__grid--kort h3{
   color:blue;
@@ -158,6 +162,8 @@ margin-bottom:2rem;
   color:whitesmoke;
 }
 footer{
+  background-color: palevioletred;
+  color:black;
   display:flex;
   flex-direction: column;
   padding:3rem;
@@ -181,17 +187,18 @@ footer h3{
 }
 
 .create-member form{
-  background-color: pink;
+  background-color: palevioletred;
   padding:2rem;
   display:flex;
   flex-direction: column;
-  color:black;
+  color:whitesmoke;
 }
 .create-member form button{
   width:220px;
   padding:1rem;
   margin-top:2rem;
-  background-color: lightblue;
+  background-color: blue;
+  color:whitesmoke;
   border:none;
   font-weight:bold;
   font-size:18px;
@@ -210,4 +217,14 @@ footer h3{
   color: white;
   font-weight:500;
   border:none;
+}
+
+.nodots li{
+  list-style: none;
+}
+
+.nodots{
+
+ text-align: center;
+ line-height:1.7rem;
 }

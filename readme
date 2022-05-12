@@ -1,17 +1,15 @@
 Jag har utgått från lektionsanteckningar, samt fyllt ut några frågetecken tack vare Net Ninja (github.com/iamshaunjp) Jag har tex jobbat med schema (mongoose).
 
-Projektet har därför MVC (Model, View, Controller) filsystem, samt lite annat.
+Jag har testat att göra enligt en MVC-mappstruktur (models, views, controller) men det lirade inte riktigt utan blev läsfel. På grund av tidsbrist så lät jag därför bli att utforska den saken närmre.
 
 Installerade verktyp etc:
 
 MongoDB
 Express
 EJS view engine
-
 Mongoose 
-//mongoose är rekommenderat för att skriva enklare kod samt göra enkla scheman för databasen, tycker den var fantastisk https://mongoosejs.com/docs/guide.html
-
-Mongoshell (fast använder typ inte pga massa vulnerabilities)
+//mongoose är rekommenderat iaf av Net ninja för att skriva enklare kod samt göra enkla scheman för databasen, tycker den var fantastisk https://mongoosejs.com/docs/guide.html
+Mongoshell (fast använder inte pga massa vulnerabilities)
 
 Noteringar:
-Har tagit bort type: module från package.json pga import gav mig error om default, som jag inte kunde lösa. Jag använder därför hellre require
+Har tagit bort type: module från package.json, enligt råd från internet, pga import gav mig error om att exportera default i mina moduler, som jag inte kunde lösa. Jag använder därför hellre require än import
