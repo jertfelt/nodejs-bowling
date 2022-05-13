@@ -124,13 +124,10 @@ expressApp.post("/medlemmar/uppdatera/:id", (request, response) => {
   "email":memberdetail.email,
   "phone": memberdetail.phone,
   "slogan": memberdetail.slogan})
-  .then(result => {
-    response.render("./members", {
-      member: result, title: "Medlemsinfo"
-    })
-  }).catch(error => {
+  .catch(error => {
     console.log(error)
   })
+  response.redirect(`/medlemmar/${id}`)
   })
   
 
