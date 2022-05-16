@@ -12,6 +12,10 @@ Mongoose
 Mongoshell (fast använder inte pga massa vulnerabilities)
 
 Noteringar:
+Har jobbat mycket med felkoder (404) och early exits
+Har använt mongoosens timestamp-funktion
+Har använt data attributes för vissa delar
+
 Har tagit bort type: module från package.json, enligt råd från internet, pga import gav mig error om att exportera default i mina moduler, som jag inte kunde lösa. Jag använder därför hellre require än import
 
 Jag har i projektet INTE jobbat mobile-first, utan bara desktop. Vid senare skede kommer jag titta på CSS:en och anpassa den till mobil.
